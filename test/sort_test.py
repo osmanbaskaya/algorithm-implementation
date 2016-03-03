@@ -18,13 +18,11 @@ class InsertionSortTest(SortTest):
     def test_insertion_sort(self):
         for i, test_array in enumerate(self.arrays, 1):
             ground_truth = sorted(test_array)
-
-            print test_array
             array = test_array[:]  # copy it.
             if i in self.printables:
                 print "Test Array:", test_array
-                print "Ground truth:", ground_truth
                 print "Copy of the Test Array", array
+                print "Ground truth:", ground_truth
             insertion_sort(array)
             diff = np.sum(ground_truth - array)
             self.assertEquals(diff, 0)
