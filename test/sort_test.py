@@ -7,7 +7,7 @@ class SortTest(unittest.TestCase):
 
     def setUp(self):
         self.arrays = []
-        for size in (10, 100, 1000):
+        for size in (10, 100, 1000, 10000):
             self.arrays.append(np.random.randint(-1000, 1000, size=[1, size]))
 
         self.printables = {1}

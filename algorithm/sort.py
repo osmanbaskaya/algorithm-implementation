@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def insertion_sort(array):
     """
     In-place insertion sort
