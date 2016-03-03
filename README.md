@@ -1,5 +1,5 @@
-# algorithm-implementation
+# Implementation of the Algorithms and Data Structures
 
-### Implemented
+### Implemented so far
 
 - Insertion Sort (in-place)
