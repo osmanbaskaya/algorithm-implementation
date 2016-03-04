@@ -24,15 +24,15 @@ def insertion_sort(array):
                 break
 
 
-if __name__ == '__main__':
-    a = [-1, 45,2,1,2,58,5]
-    a = np.array(a)
-    insertion_sort(a)
-    print a
-    a = a[::-1]
-    print a
-    insertion_sort(a)
-    print a
-
+def selection_sort(array):
+    length = len(array)
+    for i in xrange(length-1):
+        min_val, min_index = array[i], i
+        for j in xrange(i+1, length):
+            if min_val > array[j]:
+                min_val = array[j]
+                min_index = j
+        # swap
+        array[i], array[min_index] = array[min_index], array[i]
 
 
