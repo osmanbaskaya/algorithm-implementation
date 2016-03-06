@@ -6,11 +6,6 @@ def insertion_sort(array):
     In-place insertion sort
     """
 
-    def swap(index1, index2):
-        tmp = array[index1]
-        array[index1] = array[index2]
-        array[index2] = tmp
-
     length = len(array)
     for i in xrange(1, length):
         # [i-1, i-2, ..., 0]
@@ -18,7 +13,8 @@ def insertion_sort(array):
         e = array[index]
         for j in xrange(i-1, -1, -1):
             if array[j] > e:
-                swap(j, index)
+                # swap
+                array[index], array[j] = array[j], array[index]
                 index = j
             else:
                 break
