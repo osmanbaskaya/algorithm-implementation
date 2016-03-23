@@ -1,4 +1,4 @@
-from algorithm.sort import insertion_sort, selection_sort
+from algorithm.sort import insertion_sort, selection_sort, merge_sort
 import unittest
 import numpy as np
 
@@ -7,8 +7,8 @@ class SortTest(unittest.TestCase):
 
     def setUp(self):
         self.arrays = []
-        for size in (10, 100, 1000, 10000):
-            self.arrays.append(np.random.randint(0, 1000, size=[1, size])[0])
+        for size in (10, 100, 1000):
+            self.arrays.append(np.random.randint(1000, size=size))
 
         self.printables = {1}
 
@@ -37,4 +37,10 @@ class SelectionSortTest(SortTest):
 
     def test_sort(self):
         self.sort(selection_sort)
+
+
+class MergeSort(SortTest):
+
+    def test_sort(self):
+        self.sort(merge_sort)
 
