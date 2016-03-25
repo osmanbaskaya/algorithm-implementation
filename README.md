@@ -1,7 +1,5 @@
 # Implementation of the Algorithms and Data Structures
 
-## Implemented
-
 ### Sorting Algorithms
 
 - Insertion Sort (in-place)
