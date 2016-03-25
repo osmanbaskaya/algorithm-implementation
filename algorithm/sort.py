@@ -1,5 +1,6 @@
 import numpy as np
 import sys
+import math
 
 
 def insertion_sort(array):
@@ -65,6 +66,30 @@ def merge_sort(array, p=None, r=None):
         merge_sort(array, p, q)
         merge_sort(array, q, r)
         merge(array, p, q, r)
+
+
+def fast_merge_sort(array, p=None, r=None):
+
+    if isinstance(array, np.ndarray):
+        array = array.tolist()
+
+    if p is None:
+        p = 0
+    if r is None:
+        r = len(array)
+
+    k = int(math.log(len(array)))
+
+    if r - p <= k:
+        arr = array[p:r]
+        insertion_sort(arr)
+        array[p:r] = arr
+    else:
+        if r - p > 1:
+            q = (r + p) / 2
+            merge_sort(array, p, q)
+            merge_sort(array, q, r)
+            merge(array, p, q, r)
 
 
 def bubble_sort(array):
