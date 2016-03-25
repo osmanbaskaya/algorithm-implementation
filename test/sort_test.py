@@ -1,4 +1,4 @@
-from algorithm.sort import insertion_sort, selection_sort, merge_sort
+from algorithm.sort import insertion_sort, selection_sort, merge_sort, bubble_sort
 import unittest
 import numpy as np
 
@@ -43,4 +43,9 @@ class MergeSort(SortTest):
 
     def test_sort(self):
         self.sort(merge_sort)
+
+class BuubleSort(SortTest):
+
+    def test_sort(self):
+        self.sort(bubble_sort)
 

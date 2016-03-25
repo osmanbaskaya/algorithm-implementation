@@ -67,6 +67,14 @@ def merge_sort(array, p=None, r=None):
         merge(array, p, q, r)
 
 
+def bubble_sort(array):
+    n = len(array)
+    for i in xrange(n-1):
+        for j in xrange(n-1, i, -1):
+            if array[j] > array[j-1]:
+                array[j-1], array[j] = array[j], array[j-1]
+
+
 def main():
     array = [48, 127, 813, 998, 979, 667, 140, 82, 137, 811]
     print array
