@@ -22,6 +22,25 @@ def insertion_sort(array):
                 break
 
 
+def insertion_sort_recursive(array):
+
+    if len(array) > 1:
+        last_elem = array[-1]
+        arr = insertion_sort_recursive(array[:-1])
+        arr.append(last_elem)
+        index = len(arr) - 1
+        for i in xrange(len(arr)-2, -1, -1):
+            if arr[i] > last_elem:
+                arr[index], arr[i] = arr[i], arr[index]
+                index = i
+            else:
+                break
+    else:
+        arr = array
+
+    return arr
+
+
 def selection_sort(array):
     length = len(array)
     for i in xrange(length-1):
@@ -101,10 +120,9 @@ def bubble_sort(array):
 
 
 def main():
-    array = [48, 127, 813, 998, 979, 667, 140, 82, 137, 811]
+    array = [48, 127, 813, -3, -1, 2, 2, 2, 998, 979, 667, 140, 82, 137, 811]
     print array
-    merge_sort(array)
-    print array
+    print insertion_sort_recursive(array)
 
 if __name__ == '__main__':
     main()
