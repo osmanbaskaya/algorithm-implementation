@@ -120,9 +120,11 @@ def bubble_sort(array):
 
 
 def main():
-    array = [48, 127, 813, -3, -1, 2, 2, 2, 998, 979, 667, 140, 82, 137, 811]
-    print array
-    print insertion_sort_recursive(array)
+    array = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1]
+    from data_structure import Heap
+    h = Heap(array)
+    print h
+
 
 if __name__ == '__main__':
     main()
