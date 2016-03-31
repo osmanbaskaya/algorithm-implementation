@@ -124,6 +124,8 @@ def main():
     from data_structure import Heap
     h = Heap(array)
     print h
+    h.heapsort()
+    print h
 
 
 if __name__ == '__main__':
