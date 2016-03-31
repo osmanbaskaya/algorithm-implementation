@@ -28,8 +28,19 @@ class Heap(object):
         i = (index+1) * 2
         return None if self.heap_size <= i else i
 
-    def min_heapify(self):
-        pass
+    def min_heapify(self, i):
+        left = self.left(i)
+        right = self.right(i)
+        if left is not None and self.array[left] < self.array[i]:
+            m = left
+        else:
+            m = i
+        if right is not None and self.array[right] < self.array[m]:
+            m = right
+
+        self.array[m], self.array[i] = self.array[i], self.array[m]
+        if m != i:
+            self.heapify(m)
 
     def max_heapify(self, i):
         left = self.left(i)

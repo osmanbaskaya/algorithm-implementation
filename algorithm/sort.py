@@ -119,13 +119,14 @@ def bubble_sort(array):
                 array[j-1], array[j] = array[j], array[j-1]
 
 
+def heap_sort(array):
+    from data_structure import Heap
+    h = Heap(array, heap_type='max')
+    h.heapsort()
+
+
 def main():
     array = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1]
-    from data_structure import Heap
-    h = Heap(array)
-    print h
-    h.heapsort()
-    print h
 
 
 if __name__ == '__main__':
