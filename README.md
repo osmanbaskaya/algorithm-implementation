@@ -16,4 +16,19 @@
 
 ### Data Structures
 
-- Max/Min Heap
+- Max/Min Heap (array-based)
+
+
+### Coming Soon
+
+- Heap (LinkedList based)
+- Stack
+- Linked List
+- Hashtables
+- Binary Search Tree
+- BSF
+- DFS
+- The Bellman-Ford algorithm
+- Dijkstra's Algorithm
+- Floyd-Warshall algorithm
+- Graph traversal algorithms
