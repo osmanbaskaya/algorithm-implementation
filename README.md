@@ -32,3 +32,5 @@
 - Dijkstra's Algorithm
 - Floyd-Warshall algorithm
 - Graph traversal algorithms
+- Bloom Filter
+- Cuckoo Filter
