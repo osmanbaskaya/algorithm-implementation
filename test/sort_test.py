@@ -1,6 +1,7 @@
-from algorithm.sort import insertion_sort, selection_sort, merge_sort, bubble_sort, fast_merge_sort, heap_sort
+from algorithm.sort import insertion_sort, selection_sort, merge_sort, bubble_sort, fast_merge_sort, heap_sort, quicksort
 import unittest
 import numpy as np
+from copy import deepcopy
 
 
 class SortTest(unittest.TestCase):
@@ -13,18 +14,20 @@ class SortTest(unittest.TestCase):
         self.printables = {1}
 
     def sort(self, sorting_algorithm):
-        print self
+        print(self)
         for i, test_array in enumerate(self.arrays, 1):
-            ground_truth = sorted(test_array)
-            array = test_array[:]  # copy it.
+            array = deepcopy(test_array)  # copy it.
+            ground_truth = sorted(array)
             if i in self.printables:
-                print "Test Array:", test_array
-                print "Copy of the Test Array", array
-                print "Ground truth:", ground_truth
-                print
-            sorting_algorithm(array)
-            diff = np.sum(ground_truth - array)
-            self.assertEquals(diff, 0)
+                print("Test Array:", test_array.tolist())
+                print("Ground truth:", ground_truth)
+
+            sorting_algorithm(test_array)
+
+            if i in self.printables:
+                print("Sorted Array:", test_array)
+            diff = np.sum(np.abs(test_array - ground_truth))
+            self.assertEqual(diff, 0)
 
 
 class InsertionSortTest(SortTest):
@@ -62,3 +65,8 @@ class HeapSort(SortTest):
     def test_sort(self):
         self.sort(heap_sort)
 
+
+class QuicksortTest(SortTest):
+
+    def test_sort(self):
+        self.sort(quicksort)
